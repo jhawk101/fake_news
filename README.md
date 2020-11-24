@@ -24,9 +24,9 @@ poetry shell
 
 Read `Model explanation.html` to see how the model was derived.
 
-To launch jupyter notebook and explore the model code:
+To explore the model code, download the train data from [kaggle](https://www.kaggle.com/c/fake-news/data) and add to `fake_news/data` . Then run:
 
-```bash
+``` bash
 jupyter notebook
 ```
 
