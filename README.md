@@ -1,4 +1,4 @@
-# Property Pricing Model
+# Fake News classifier
 
 ## Dependencies
 
