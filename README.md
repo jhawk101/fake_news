@@ -22,7 +22,7 @@ poetry shell
 
 ## Model
 
-Read `Model explanation.html` to see how the model was derived.
+Read [this notebook](Model%20explanation.ipynb) to see how the model was derived.
 
 To explore the model code, download the train data from [kaggle](https://www.kaggle.com/c/fake-news/data) and add to `fake_news/data` . Then run:
 
