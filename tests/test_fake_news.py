@@ -24,3 +24,24 @@ def test_FakeNews_2():
     )
     assert fn.score == 0.708754327229777
     assert fn.RAG == "Red"
+
+def test_FakeNews_title_0():
+    fn = FakeNews(
+        "WATCH: MILO and Martin Shkreli March on UC Davis’ Campus - Breitbart",
+    )
+    assert fn.score == 0.036625672967898724
+    assert fn.RAG == "Green"
+
+def test_FakeNews_title_1():
+    fn = FakeNews(
+        "Trump Says Go Back, We Say Fight Back",
+    )
+    assert fn.score == 0.5455830046513762
+    assert fn.RAG == "Amber"
+
+def test_FakeNews_title_2():
+    fn = FakeNews(
+        "15 Civilians Killed In Single US Airstrike Have Been Identified",
+    )
+    assert fn.score == 0.853730521530615
+    assert fn.RAG == "Red"

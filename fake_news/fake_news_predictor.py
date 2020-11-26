@@ -4,19 +4,30 @@ RED_BOUND = 0.6
 GREEN_BOUND = 0.4
 
 class FakeNews:
-    def __init__(self, title, body):
+    def __init__(self, title, body:str=""):
+        self.title_model = len(body) == 0
         self.text = title + " " + body
     
     @property
     def _tfidf_transform(self):
-        with open("fake_news/models/tfidf.pk", "rb") as f:
+        if self.title_model:
+            tfidf_path = "fake_news/models/tfidf_titles.pk"
+        else:
+            tfidf_path = "fake_news/models/tfidf.pk"
+
+        with open(tfidf_path, "rb") as f:
             vec = pickle.load(f)
 
         return vec.transform([self.text])
     
     @property
     def score(self):
-        with open("fake_news/models/logreg.pk", "rb") as f:
+        if self.title_model:
+            model_path = "fake_news/models/logreg_titles.pk"
+        else:
+            model_path = "fake_news/models/logreg.pk"
+
+        with open(model_path, "rb") as f:
             clf = pickle.load(f)
 
         return clf.predict_proba(self._tfidf_transform)[0, 1]

@@ -32,6 +32,10 @@ jupyter notebook
 
 To change the bands for RAGing the scores, see the globals in `fake_news/fake_news_predictor.py`
 
+### Title only model
+
+If a `FakeNews` class is instantiated with a single string, it's assumed to be the title of an article and will return a score based on a model build with just titles, see [headline model](headline%20model.ipynb) for code to build.
+
 ## Testing
 
 This will run the model tests, the test shows how to instantiate a `FakeNews` class and obtain a prediction.
